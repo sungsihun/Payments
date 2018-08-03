@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PaymentGateway.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -21,8 +22,11 @@ int main(int argc, const char * argv[]) {
         NSString *inputString = [[NSString alloc] initWithUTF8String:str];
         inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        int input = [inputString intValue];
-        NSLog(@"you enter: %d", input);
+        int inputDollar = [inputString intValue];
+        NSLog(@"you enter: %d", inputDollar);
+        
+        PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
+        [paymentGateway processPaymentAmount:inputDollar];
         
         
         
