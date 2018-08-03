@@ -12,7 +12,8 @@
 
 
 - (void)processPaymentAmount:(NSInteger *)inputInt {
-    
+    NSLog(@"stripe");
+
 }
 
 

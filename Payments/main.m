@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "PaymentGateway.h"
+#import "StripePaymentService.h"
+#import "PaypalPaymentService.h"
+#import "AmazonPaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
-        NSNumber *dollar = [NSNumber numberWithFloat:arc4random_uniform(901)+100];
-        NSLog(@"Thank you for shopping at Acme.com Your total today is $%@ Please select your payment method: 1: Paypal, 2: Stripe, 3: Amazon", dollar);
+   
+        NSInteger dollar = arc4random_uniform(901)+100;
+        NSLog(@"Thank you for shopping at Acme.com Your total today is $%ld Please select your payment method: 1: Paypal, 2: Stripe, 3: Amazon", dollar);
         
         NSLog(@"> ");
         char str[100];
@@ -22,13 +25,35 @@ int main(int argc, const char * argv[]) {
         NSString *inputString = [[NSString alloc] initWithUTF8String:str];
         inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        int inputDollar = [inputString intValue];
-        NSLog(@"you enter: %d", inputDollar);
+        int userPaymentInput = [inputString intValue];
+        NSLog(@"your payment: %d", userPaymentInput);
         
         PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
-        [paymentGateway processPaymentAmount:inputDollar];
         
-        
+        switch (userPaymentInput)
+        {
+            case 1:  // Paypal
+            {
+                PaypalPaymentService *paypal = [[PaypalPaymentService alloc] init];
+                paymentGateway.paymentDelegate = paypal;
+                [paymentGateway processPaymentAmount:&dollar];
+                break;
+            }
+            case 2:  // Stripe
+            {
+                StripePaymentService *stripe = [[StripePaymentService alloc] init];
+                paymentGateway.paymentDelegate = stripe;
+                [paymentGateway processPaymentAmount:&dollar];
+                break;
+            }
+            case 3:  // Amazon
+            {
+                AmazonPaymentService *amazon = [[AmazonPaymentService alloc] init];
+                paymentGateway.paymentDelegate = amazon;
+                [paymentGateway processPaymentAmount:&dollar];
+                break;
+            }
+        }
         
     }
     return 0;

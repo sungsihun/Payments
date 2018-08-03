@@ -10,8 +10,8 @@
 
 @implementation PaymentGateway
 
-- (void)processPaymentAmount:(NSInteger *) inputInt {
-    
+- (void)processPaymentAmount:(NSInteger *) inputAmount {
+    [self.paymentDelegate processPaymentAmount:inputAmount];
 }
 
 

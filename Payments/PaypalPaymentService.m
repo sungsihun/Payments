@@ -11,7 +11,8 @@
 @implementation PaypalPaymentService
 
 - (void)processPaymentAmount:(NSInteger *)inputInt {
-    
+    NSLog(@"paypal");
+
 }
 
 

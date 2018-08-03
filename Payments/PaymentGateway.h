@@ -10,7 +10,7 @@
 
 @protocol PaymentDelegate
 
-- (void)processPaymentAmount:(NSInteger *)inputInt;
+- (void)processPaymentAmount:(NSInteger *)inputAmount;
 
 @end
 
@@ -18,6 +18,6 @@
 
 @property (nonatomic, weak) id<PaymentDelegate> paymentDelegate;
 
-- (void)processPaymentAmount:(NSInteger *)inputInt;
+- (void)processPaymentAmount:(NSInteger *)inputAmount;
 
 @end
