@@ -10,4 +10,9 @@
 
 @implementation AmazonPaymentService
 
+- (void)processPaymentAmount:(NSInteger *)inputInt {
+    
+}
+
+
 @end
