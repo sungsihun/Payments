@@ -10,10 +10,16 @@
 
 @implementation PaypalPaymentService
 
-- (void)processPaymentAmount:(NSInteger *)inputInt {
-    NSLog(@"paypal");
-
+- (void)processPaymentAmount:(NSInteger)inputInt {
+    NSLog(@"Paypal processed amount $%li", (long)inputInt);
 }
 
+- (BOOL)canProcessPayment {
+    if (arc4random_uniform(2) == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
 
 @end

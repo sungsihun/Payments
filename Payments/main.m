@@ -36,21 +36,21 @@ int main(int argc, const char * argv[]) {
             {
                 PaypalPaymentService *paypal = [[PaypalPaymentService alloc] init];
                 paymentGateway.paymentDelegate = paypal;
-                [paymentGateway processPaymentAmount:&dollar];
+                [paymentGateway processPaymentAmount:dollar];
                 break;
             }
             case 2:  // Stripe
             {
                 StripePaymentService *stripe = [[StripePaymentService alloc] init];
                 paymentGateway.paymentDelegate = stripe;
-                [paymentGateway processPaymentAmount:&dollar];
+                [paymentGateway processPaymentAmount:dollar];
                 break;
             }
             case 3:  // Amazon
             {
                 AmazonPaymentService *amazon = [[AmazonPaymentService alloc] init];
                 paymentGateway.paymentDelegate = amazon;
-                [paymentGateway processPaymentAmount:&dollar];
+                [paymentGateway processPaymentAmount:dollar];
                 break;
             }
         }
