@@ -12,6 +12,7 @@
 		0694F2C32114EDBC00149203 /* StripePaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0694F2C22114EDBC00149203 /* StripePaymentService.m */; };
 		0694F2C62114EDC700149203 /* PaypalPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0694F2C52114EDC700149203 /* PaypalPaymentService.m */; };
 		0694F2C92114EDD500149203 /* AmazonPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0694F2C82114EDD500149203 /* AmazonPaymentService.m */; };
+		0694F2CC211504FF00149203 /* ApplePaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0694F2CB211504FF00149203 /* ApplePaymentService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		0694F2C52114EDC700149203 /* PaypalPaymentService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaypalPaymentService.m; sourceTree = "<group>"; };
 		0694F2C72114EDD500149203 /* AmazonPaymentService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmazonPaymentService.h; sourceTree = "<group>"; };
 		0694F2C82114EDD500149203 /* AmazonPaymentService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmazonPaymentService.m; sourceTree = "<group>"; };
+		0694F2CA211504FF00149203 /* ApplePaymentService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplePaymentService.h; sourceTree = "<group>"; };
+		0694F2CB211504FF00149203 /* ApplePaymentService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplePaymentService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				0694F2C52114EDC700149203 /* PaypalPaymentService.m */,
 				0694F2C72114EDD500149203 /* AmazonPaymentService.h */,
 				0694F2C82114EDD500149203 /* AmazonPaymentService.m */,
+				0694F2CA211504FF00149203 /* ApplePaymentService.h */,
+				0694F2CB211504FF00149203 /* ApplePaymentService.m */,
 				0694F2BE2114EC9C00149203 /* PaymentGateway.h */,
 				0694F2BF2114EC9C00149203 /* PaymentGateway.m */,
 			);
@@ -141,6 +146,7 @@
 				0694F2B82114E9B000149203 /* main.m in Sources */,
 				0694F2C92114EDD500149203 /* AmazonPaymentService.m in Sources */,
 				0694F2C32114EDBC00149203 /* StripePaymentService.m in Sources */,
+				0694F2CC211504FF00149203 /* ApplePaymentService.m in Sources */,
 				0694F2C02114EC9C00149203 /* PaymentGateway.m in Sources */,
 				0694F2C62114EDC700149203 /* PaypalPaymentService.m in Sources */,
 			);
