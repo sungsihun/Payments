@@ -10,8 +10,22 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+
+        NSNumber *dollar = [NSNumber numberWithFloat:arc4random_uniform(901)+100];
+        NSLog(@"Thank you for shopping at Acme.com Your total today is $%@ Please select your payment method: 1: Paypal, 2: Stripe, 3: Amazon", dollar);
+        
+        NSLog(@"> ");
+        char str[100];
+        fgets (str, 100, stdin);
+        
+        NSString *inputString = [[NSString alloc] initWithUTF8String:str];
+        inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        int input = [inputString intValue];
+        NSLog(@"you enter: %d", input);
+        
+        
+        
     }
     return 0;
 }
